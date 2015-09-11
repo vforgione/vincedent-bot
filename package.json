@@ -1,0 +1,10 @@
+{
+  "name": "vincedent-slackbot",
+  "version": "1.0.0",
+  "description": "colorful eupahmisms for your blatant intellectual deficiencies",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3"
+  }
+}
