@@ -1,3 +1,5 @@
+var request = require('request');
+
 module.exports = function (req, res, next) {
   var vinceisms = [
     'You dummy!',
@@ -13,11 +15,38 @@ module.exports = function (req, res, next) {
     ':boom: :frowning: :gun:'
   ];
 
-  var botPayload = { text: vinceisms[Math.floor(Math.random() * vinceisms.length)] };
+  var botPayload = {
+    text: vinceisms[Math.floor(Math.random() * vinceisms.length)],
+    username: 'vincedentbot',
+    channel: req.body.channel_id,
+    icon_emoju: ':fire:'
+  };
 
   if (req.body.user_name !== 'slackbot') {
-    return res.status(200).json(botPayload);
+    send(botPayload, function (error, status, body) {
+      if (error) {
+        return next(error);
+      } else if (status !== 200) {
+        return next(new Error('Incoming WebHook: ' + status + ' ' + body));
+      } else {
+        return res.status(200).end();
+      }
   } else {
     return res.status(200).end();
   }
+}
+
+function send (payload, callback) {
+  var path = process.env.INCOMING_WEBHOOK_PATH;
+  var uri = 'https://hooks.slack.com/services' + path;
+  request({
+    uri: uri,
+    method: 'POST',
+    body: JSON.stringify(payload)
+  }, function (error, response, body) {
+    if (error) {
+      return callback(error);
+    }
+    callback(null, response.statusCode, body);
+  });
 }
