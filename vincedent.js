@@ -12,7 +12,10 @@ module.exports = function (req, res, next) {
     'Polymorphism in Django? What are you, an idiot? Get the fuck outta here!',
     'BULLSHIT!!!',
     'Uh huh.... ok...... yeah......... :quietly dying inside:',
-    ':boom: :frowning: :gun:'
+    ':boom: :frowning: :gun:',
+    'Burn this shit the fuck down.',
+    'Tom Christie!? That Dutch sack of crap!',
+    'Coffee run!'
   ];
 
   var botPayload = {
