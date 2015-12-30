@@ -3,18 +3,15 @@ var request = require('request');
 module.exports = function (req, res, next) {
   var vinceisms = [
     'You dummy!',
-    "That's a fucking dog shit idea!",
     'FFFFFFFUUUUUUUUUUUU',
-    'Fuck this shit.. I jus... arrrgh...',
+    'Fff.. I jus... arrrgh...',
     "Wow! That wasn't supposed to happen.",
     '... srsly!?',
-    'You have got to be fucking kidding me',
-    'Polymorphism in Django? What are you, an idiot? Get the fuck outta here!',
-    'BULLSHIT!!!',
+    'You have got to be freaking kidding me',
+    'Polymorphism in Django? What are you, an idiot?',
     'Uh huh.... ok...... yeah......... :quietly dying inside:',
     ':boom: :frowning: :gun:',
-    'Burn this shit the fuck down.',
-    'Tom Christie!? That Dutch sack of crap!',
+    'Burn this shit to the ground.',
     'Coffee run!'
   ];
 
